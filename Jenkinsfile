@@ -26,7 +26,6 @@ pipeline {
         }
         stage('Deploy to Kubernetes') {
             steps {
-                sh 'export KUBECONFIG=/etc/kubernetes/admin.conf'
                 sh 'kubectl apply -f deployment.yml'
                 sh 'kubectl apply -f service.yml'
             }
